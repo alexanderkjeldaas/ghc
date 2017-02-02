@@ -887,10 +887,10 @@ exactTyCoVarsOfType ty
 exactTyCoVarsOfTypes :: [Type] -> TyVarSet
 exactTyCoVarsOfTypes tys = mapUnionVarSet exactTyCoVarsOfType tys
 
-rewritableTyVarsOfTypes :: [TcType] -> TcTyVarSet
+rewritableTyVarsOfTypes :: HasCallStack => [TcType] -> TcTyVarSet
 rewritableTyVarsOfTypes tys = mapUnionVarSet rewritableTyVarsOfType tys
 
-rewritableTyVarsOfType :: TcType -> TcTyVarSet
+rewritableTyVarsOfType :: HasCallStack => TcType -> TcTyVarSet
 -- Used during kick-out from the inert set
 -- Ignores coercions and casts, because rewriting those does
 -- not help solving, and it's more efficient to ignore them
