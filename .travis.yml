@@ -1,4 +1,5 @@
 # The following enables container-based travis instances
+dist: trusty
 sudo: false
 language: generic
 
