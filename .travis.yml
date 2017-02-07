@@ -1,6 +1,3 @@
-# The following enables container-based travis instances
-sudo: false
-
 git:
   submodules: false
 
