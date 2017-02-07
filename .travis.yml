@@ -1,3 +1,7 @@
+# The following enables container-based travis instances
+sudo: false
+language: generic
+
 git:
   submodules: false
 
