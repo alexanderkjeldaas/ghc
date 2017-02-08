@@ -44,6 +44,11 @@ before_install:
  - git submodule --quiet update --recursive # Now we can be quiet again.
 
 script:
+ # try "quickest" flavor
+ - echo 'SRC_HC_OPTS        = -O0 -H64m' >> mk/validate.mk
+ - echo 'GhcStage1HcOpts    = -O'        >> mk/validate.mk
+ - echo 'GhcStage2HcOpts    = -O0'       >> mk/validate.mk
+ - echo 'GhcLibHcOpts       = -O0'       >> mk/validate.mk
  # do  not build docs
  - echo 'HADDOCK_DOCS       = NO' >> mk/validate.mk
  - echo 'BUILD_SPHINX_HTML  = NO' >> mk/validate.mk
